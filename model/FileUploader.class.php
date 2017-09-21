@@ -52,6 +52,12 @@
       $this->saveLocation = $this->Security->checkInput($location);
     }
 
+    /**
+     * Checks if a file exists
+     * FUNCTION CAN ONLY BE USED AFTER setSaveLocation
+     * @param  [string] $fileName [The name of the uploaded file]
+     * @return [boolean]           [If the file exists we return true]
+     */
     public function checkIfFileExists($fileName) {
       if (file_exists($this->saveLocation . $fileName)) {
         return(true);
