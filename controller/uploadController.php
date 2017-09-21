@@ -26,6 +26,12 @@
             include 'view/image.php';
           include 'view/footer.php';
         }
+
+        else {
+          include 'view/header.php';
+            include 'view/image-error.php';
+          include 'view/footer.php';
+        }
       }
     }
 
