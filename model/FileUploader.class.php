@@ -52,6 +52,16 @@
       $this->saveLocation = $this->Security->checkInput($location);
     }
 
+    public function checkIfFileExists($fileName) {
+      if (file_exists($this->saveLocation . $fileName)) {
+        return(true);
+      }
+
+      else {
+        return(false);
+      }
+    }
+
     /**
      * Checks if a directory exists
      * @return [boolean] [Of we found the directory we return true]

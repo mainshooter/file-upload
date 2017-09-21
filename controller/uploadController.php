@@ -20,15 +20,18 @@
         $base_dir = getcwd();
         $this->FileUploader->setSaveLocation($base_dir . '/view/upload/');
 
-        $uploadResult = $this->FileUploader->uploadFile($_FILES['fileUpload']);
-        if ($uploadResult === true) {
-          include 'view/header.php';
-            include 'view/image.php';
-          include 'view/footer.php';
+        if ($this->FileUploader->checkIfFileExists($_FILES['fileUpload']['name']) === false) {
+          $uploadResult = $this->FileUploader->uploadFile($_FILES['fileUpload']);
+          if ($uploadResult === true) {
+            include 'view/header.php';
+              include 'view/image.php';
+            include 'view/footer.php';
+          }
         }
 
         else {
           include 'view/header.php';
+          echo "<h1>Bestand bestaat al!</h1>";
             include 'view/image-error.php';
           include 'view/footer.php';
         }
