@@ -7,6 +7,7 @@
     private $allowedFileTypes;
     private $saveLocation;
 
+
     public function __construct() {
       $this->Security = new Security();
     }
@@ -36,6 +37,22 @@
     }
 
     /**
+     * Sets the allowed file types
+     * @param [string / array] $allowedFileTypes [a string if we want to allow all file types and a array with all file types we want to allow]
+     */
+    public function setAllowedFileTypes($allowedFileTypes) {
+      $this->allowedFileTypes = $allowedFileTypes;
+    }
+
+    /**
+     * Sets the save location of the file
+     * @param [string] $location [The FULL path location of the directory we want to save the file in]
+     */
+    public function setSaveLocation($location) {
+      $this->saveLocation = $this->Security->checkInput($location);
+    }
+
+    /**
      * Checks if a directory exists
      * @return [boolean] [Of we found the directory we return true]
      */
@@ -47,14 +64,6 @@
       else {
         return(false);
       }
-    }
-
-    /**
-     * Sets the save location of the file
-     * @param [string] $location [The FULL path location of the directory we want to save the file in]
-     */
-    public function setSaveLocation($location) {
-      $this->saveLocation = $this->Security->checkInput($location);
     }
 
     /**
@@ -85,13 +94,7 @@
       }
     }
 
-    /**
-     * Sets the allowed file types
-     * @param [string / array] $allowedFileTypes [a string if we want to allow all file types and a array with all file types we want to allow]
-     */
-    public function setAllowedFileTypes($allowedFileTypes) {
-      $this->allowedFileTypes = $allowedFileTypes;
-    }
+
 
   }
   // application/javascript
