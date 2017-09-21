@@ -42,9 +42,6 @@
     <div class="col-3 col-m-12 menu">
       <ul>
         <li><a href="<?php echo $GLOBALS['config']['base_url'] ?>">Home</a></li>
-        <li><a href="<?php echo $GLOBALS['config']['base_url'] ?>">The City</a></li>
-        <li><a href="<?php echo $GLOBALS['config']['base_url'] ?>">The Island</a></li>
-        <li><a href="<?php echo $GLOBALS['config']['base_url'] ?>">The Food</a></li>
       </ul>
     </div>
     <div class="row">

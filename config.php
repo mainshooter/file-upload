@@ -1,7 +1,7 @@
 <?php
   $config;
 
-  $config['project-name'] = 'Project naam';
+  $config['project-name'] = 'File uploader';
   $config['project-author'] = 'Peter Romijn';
   $config['project-company'] = 'SameBestDevelopment';
 
