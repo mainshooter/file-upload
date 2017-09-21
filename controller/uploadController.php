@@ -33,6 +33,11 @@
           include 'view/footer.php';
         }
       }
+
+      else {
+        // client came here by excident
+        header('Location: '. $GLOBALS['config']['base_url']);
+      }
     }
 
   }
