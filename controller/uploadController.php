@@ -11,7 +11,12 @@
 
     public function uploadFile() {
       if (ISSET($_POST['upload'])) {
-        $this->FileUploader->setAllowedFileTypes('*');
+        $allowedTypes = array(
+          "image/png",
+          "image/jpeg",
+          "image/gif"
+        );
+        $this->FileUploader->setAllowedFileTypes($allowedTypes);
         $base_dir = getcwd();
         $this->FileUploader->setSaveLocation($base_dir . '/view/upload/');
 
