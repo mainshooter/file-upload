@@ -27,12 +27,19 @@
               include 'view/image.php';
             include 'view/footer.php';
           }
+
+          else {
+            // Something wen't wrong
+            include 'view/header.php';
+              include 'view/image-error.php';
+            include 'view/footer.php';
+          }
         }
 
         else {
           include 'view/header.php';
-          echo "<h1>Bestand bestaat al!</h1>";
-            include 'view/image-error.php';
+            echo "<h3 class=col'6>Dit bestand bestaat al!</h3>";
+            include 'view/result.php';
           include 'view/footer.php';
         }
       }
